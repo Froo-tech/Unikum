@@ -1,0 +1,227 @@
+import frange
+print(*range(1, 21))
+print(*range(1001, 1026, 3))
+print(*range(100, 0, -4))
+print(*[round(x, 1) for x in frange(1.2, 2.9, 0.2)])
+for i in range(25, 36):
+    print(f"{i} {i+0.5} {i-0.2}")
+
+r = float(input())
+for i in range(1, 101):
+    rub = i * r
+    kg = rub / 20
+    print(f"{i}$ - {rub:.2f} р - {kg:.2f} кг")
+
+n = int(input())
+print(sum(range(1, n + 1)))
+print(sum(range(10, 89)))
+
+import math
+print(math.prod(range(5, 14)))
+print(sum(range(1, 113, 3)))
+
+import math
+a = range(35, 102, 22)
+print(sum(math.cos(math.radians(x)) for x in a))
+
+print(sum(range(23, 911, 11)))
+for n in range(1, 101):
+    print(sum(range(1, n + 1)))
+
+n = int(input())
+print(sum(i**2 for i in range(1, n + 1)))
+n = int(input())
+print(sum(int(f"1{i}") for i in range(2, n + 1)))
+
+a = int(input())
+n = int(input())
+p = math.prod((a + i)**2 for i in range(1, n + 1))
+print(p)
+
+x = float(input())
+n = int(input())
+print(sum(1 / math.cos(math.radians(x**i)) for i in range(1, n + 1)))
+
+n = int(input())
+print(sum(math.prod(range(i, 2*i + 1)) for i in range(1, n + 1)))
+
+d = 10
+dist = [d]
+for i in range(1, 10):
+    d *= 1.1
+    dist.append(d)
+    print(f"День {i+1}: {d:.2f} км")
+
+print(f"Суммарный путь за 7 дней: {sum(dist[:7]):.2f} км")
+
+n = int(input())
+t = 0
+d = 10
+for _ in range(n):
+    t += d
+    d *= 1.1
+print(f"Суммарный путь за {n} дней: {t:.2f} км")
+
+d = 10
+day = 1
+while d <= 80:
+    d *= 1.1
+    day += 1
+print(f"Следует прекратить увеличивать пробег на {day}-й день")
+
+for i in range(1000, 10000):
+    s = str(i)
+    if len(set(s)) == 4:
+        print(i)
+
+for i in range(1000, 10000):
+    s = str(i)
+    if '5' not in s and '6' not in s:
+        print(i)
+
+for i in range(10000, 100000):
+    s = str(i)
+    if i % 2 == 0 and int(s[2]) % 2 != 0 and sum(int(d) for d in s) % 4 == 0:
+        print(i)
+
+for i in range(1000, 10000):
+    if '3' in str(i):
+        print(i)
+
+for i in range(100, 1000):
+    if i == sum(int(d)**3 for d in str(i)):
+        print(i)
+
+c = 0
+for i in range(1000, 10000):
+    if i == 600 * sum(int(d) for d in str(i)):
+        c += 1
+print(f"Количество таких чисел: {c}")
+
+num = 1
+while True:
+    if num % 11 == 0 and all(num % i == 1 for i in range(2, 11)):
+        print(num)
+        break
+    num += 1
+
+n = int(input())
+print("1 " * n + "2 " * (2 * n) + "3 " * (3 * n))
+
+t = 0
+for i in range(10, 0, -1):
+    t += i * i
+    print(f"{str(i) * i}")
+print(f"Сумма всех чисел: {t}")
+
+print(list(range(1, 21)))
+print(list(range(1001, 1026, 3)))
+print(list(range(100, 0, -4)))
+print([round(x, 1) for x in list(frange(1.2, 2.9, 0.2))])
+for i in range(25, 36):
+    print(f"{i} {i+0.5} {i-0.2}")
+
+rate = float(input())
+for i in range(1, 101):
+    rub = i * rate
+    kg = rub / 20
+    print(f"{i}$ - {rub:.2f} р - {kg:.2f} кг")
+
+n = int(input())
+print(sum(range(1, n + 1)))
+print(sum(range(10, 89)))
+import math
+print(math.prod(range(5, 14)))
+print(sum(range(1, 113, 3)))
+import math
+angles = range(35, 102, 22)
+print(sum(math.cos(math.radians(a)) for a in angles))
+print(sum(range(23, 911, 11)))
+for n in range(1, 101):
+    print(sum(range(1, n + 1)))
+
+n = int(input())
+print(sum(i**2 for i in range(1, n + 1)))
+n = int(input())
+print(sum(int(f"1{i}") for i in range(2, n + 1)))
+
+a = int(input())
+n = int(input())
+p = math.prod((a + i)**2 for i in range(1, n + 1))
+print(p)
+
+x = float(input())
+n = int(input())
+print(sum(1 / math.cos(math.radians(x**i)) for i in range(1, n + 1)))
+
+n = int(input())
+print(sum(math.prod(range(i, 2*i + 1)) for i in range(1, n + 1)))
+
+d = 10
+distances = [d]
+for i in range(1, 10):
+    d *= 1.1
+    distances.append(d)
+    print(f"День {i+1}: {d:.2f} км")
+
+print(f"Суммарный путь за 7 дней: {sum(distances[:7]):.2f} км")
+
+n = int(input())
+total = 0
+d = 10
+for _ in range(n):
+    total += d
+    d *= 1.1
+print(f"Суммарный путь за {n} дней: {total:.2f} км")
+
+d = 10
+day = 1
+while d <= 80:
+    d *= 1.1
+    day += 1
+print(f"Следует прекратить увеличивать пробег на {day}-й день")
+
+for i in range(1000, 10000):
+    s = str(i)
+    if len(set(s)) == 4:
+        print(i)
+
+for i in range(1000, 10000):
+    s = str(i)
+    if '5' not in s and '6' not in s:
+        print(i)
+
+for i in range(10000, 100000):
+    s = str(i)
+    if i % 2 == 0 and int(s[2]) % 2 != 0 and sum(int(d) for d in s) % 4 == 0:
+        print(i)
+
+for i in range(1000, 10000):
+    if '3' in str(i):
+        print(i)
+
+for i in range(100, 1000):
+    if i == sum(int(d)**3 for d in str(i)):
+        print(i)
+
+count = 0
+for i in range(1000, 10000):
+    if i == 600 * sum(int(d) for d in str(i)):
+        count += 1
+print(f"Количество таких чисел: {count}")
+
+num = 1
+while True:
+    if num % 11 == 0 and all(num % i == 1 for i in range(2, 11)):
+        print(num)
+        break
+    num += 1
+
+n = int(input())
+print("1 " * n + "2 " * (2 * n) + "3 " * (3 * n))
+
+total = 0
+for i in range(10, 0, -1):
+    total += i * i
+    print(f"{str(i) * i}")
+print(f"Сумма всех чисел: {total}")
