@@ -1,0 +1,33 @@
+import math
+def nat(n):
+    if n != 1:
+        n -= 1
+        print(n)
+        nat(n)
+    else:
+        return(0)
+nat(5)
+import math
+def logo(N):
+    if (math.log(N) % 10) == 0:
+        print("Без остатка")
+    else:
+        return
+logo(1)
+res = 0
+def quest(num, _2n=1):
+    global res
+    if num == _2n:
+        res = "YES"
+    elif num < _2n:
+        res = "NO"
+    else:
+        quest(num, _2n*2)
+quest(int(input()))
+print(res)
+def fib(a, b):
+    if b < 1000000000:
+        print(a+b)
+        fib(b, a+b)
+
+fib(0, 1)
