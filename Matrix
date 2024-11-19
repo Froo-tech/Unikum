@@ -1,0 +1,35 @@
+import random
+matrix = [[random.randint(1,10)for i in range(8)] for j in range(8)]
+
+for row in matrix:
+    for element in row:
+        print(element, end='\t')
+    print()
+
+
+def ser_matrix_min(matrix, Column):
+    f = matrix[Column][0]
+    if len(matrix[0]) >= Column:
+        for row in matrix:
+            for element in row:
+                if element <= f:
+                    f = element
+
+
+def ser_matrix(matrix, Column):
+    f = matrix[Column][0]
+    if len(matrix[0]) >= Column:
+        for row in matrix:
+            for element in row:
+                if element > f:
+                    f = element
+
+
+
+    return f
+min_value = ser_matrix_min(matrix, 3)
+max_value = ser_matrix(matrix, 3)
+print(f"Максимальное занчение с столбце : ", max_value)
+print(f"Минимальное занчение с столбце : ", min_value)
+
+
