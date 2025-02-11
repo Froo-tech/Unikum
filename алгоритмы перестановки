@@ -1,0 +1,53 @@
+import itertools
+import time
+
+st = {"T", "O", "Л", "П", "A"}  
+def permutations(st):
+    perms = itertools.permutations(st)
+
+    for perm in perms:
+        print(perm)
+
+print("Тротера")
+
+def trotera(n):
+    s = []
+    d = []
+    p = list(range(1, n + 1))
+    d = {i: -1 for i in range(1, n + 1)}
+
+    def mobile(k):
+        idex = p.index(k)
+        d_k = d[k]
+        n_idex = idex + d_k
+        if 0 <= n_idex < n and p[n_idex] < k:
+            return True
+        else:
+            return False
+
+    yield p[:]
+    while True:
+        m_nums = [k for k in range(1, n + 1) if mobile(k)]
+        if not m_nums:
+            break
+        m = max(m_nums)
+        ind_m = p.index(m)
+        move_to = ind_m + d[m]
+        p[ind_m], p[move_to] = p[move_to], p[ind_m]
+        for k in range(1, n + 1):
+            if k > m:
+                d[k] = -d[k]
+        yield p[:]
+
+for perm1 in trotera(len(st)):
+    print(perm1)
+
+now_time = time.time()
+permutations(st)
+finish_time = time.time()
+print(finish_time - now_time)
+
+now_time = time.time()
+print(next(itertools.product(st)))
+finish_time = time.time()
+print(finish_time - now_time)
